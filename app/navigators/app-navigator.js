@@ -9,9 +9,7 @@ const Stack = createStackNavigator();
 const AppNavigator = () => {
   return (
     <NavigationContainer>
-    <Stack.Navigator
-    //initialRouteName='Onboarding Screen'
-    >
+    <Stack.Navigator>
       <Stack.Screen
         name='Onboarding Screen'
         component={OnboardingScreen}
