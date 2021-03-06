@@ -1,16 +1,24 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import Swiper from './swiper';
-import OnboardingStep1 from './onboarding-1';
-import OnboardingStep2 from './onboarding-2';
-import OnboardingStep3 from './onboarding-3';
+import OnboardingStep from './onboarding-step';
 
-const OnboardingScreen = () => {
-   return (
+const OnboardingScreen = props => {
+  console.warn('woop', props);
+  const { navigation } = props;
+  return (
      <Swiper>
-      <OnboardingStep1/>
-      <OnboardingStep2/>
-      <OnboardingStep3/>
+      <OnboardingStep
+        title={'Live Selling'}
+        subtext={'Vestibulum ac diam sit amet quam vehicula eget tincidunt '}
+        navigation={navigation} 
+      />
+      <OnboardingStep
+        title={'About Safe Shopping'}
+        subtext={'Vestibulum ac diam sit amet quam vehicula eget tincidunt '}/>
+      <OnboardingStep
+        title={'Another Value Prop'}
+        subtext={'Vestibulum ac diam sit amet quam vehicula eget tincidunt '}/>
      </Swiper>
   )
 }

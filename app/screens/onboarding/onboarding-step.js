@@ -3,12 +3,15 @@ import { View, Text, StyleSheet, Image } from 'react-native';
 import { Images } from '../../theme';
 import Button from '../../components/Button';
 
-const OnboardingStep2 = () => {
+const OnboardingStep = props => {
+  const { title, subtext, image, navigation } = props;
+  console.warn('prop', props);
+
   return (
     <View style={styles.container}>
       <View style={styles.headerContainer}>
-      <Text style={styles.header}>HELLO</Text>
-   <Text style={styles.text}>This is the start of testing</Text>
+  <Text style={styles.header}>{title}</Text>
+  <Text style={styles.text}>{subtext}</Text> 
       </View>
       <View style={{ flex: 2, backgroundColor: 'red' }} />
       <View style={styles.buttonContainer}>
@@ -16,6 +19,7 @@ const OnboardingStep2 = () => {
           buttonStyle={styles.button}
           textStyle={styles.textButton}
           text='Create Account'
+          onPress={() => navigation.navigate('Registration Screen')}
         />
         <View style={{ flexDirection: 'row', marginTop: 20 }}>
           <Text style={{ marginRight: 5 }}> Already have an account?</Text>
@@ -29,7 +33,7 @@ const OnboardingStep2 = () => {
   )
 }
 
-export default OnboardingStep2;
+export default OnboardingStep;
 
 const styles = StyleSheet.create({
   container: {
